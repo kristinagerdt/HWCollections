@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 public class IsCircular {
 
@@ -35,8 +37,7 @@ public class IsCircular {
 
     public static boolean isCircular2(LinkedList<String> list1, LinkedList<String> list2) {
         for (int i = 0; i < list1.size(); i++) {
-            list1.addLast(list1.getFirst());
-            list1.removeFirst();
+            list1.addLast(list1.pollFirst());
             if (list1.equals(list2)) {
                 return true;
             }
